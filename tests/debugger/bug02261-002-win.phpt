@@ -24,14 +24,13 @@ echo file_get_contents( $xdebugLogFileName );
 ?>
 --EXPECTF--
 <?xml version="1.0" encoding="iso-8859-1"?>
-<init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug" fileuri="file://bug01949.inc" language="PHP" xdebug:language_version="" protocol_version="1.0" appid="" xdebug:ctrl_socket="xdebug-ctrl.%s"><engine version=""><![CDATA[Xdebug]]></engine><author><![CDATA[Derick Rethans]]></author><url><![CDATA[https://xdebug.org]]></url><copyright><![CDATA[Copyright (c) 2002-2099 by Derick Rethans]]></copyright></init>
+<init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug" fileuri="file://bug01949.inc" language="PHP" xdebug:language_version="" protocol_version="1.0" appid="" xdebug:ctrl_socket="%sxdebug-ctrl.%s"><engine version=""><![CDATA[Xdebug]]></engine><author><![CDATA[Derick Rethans]]></author><url><![CDATA[https://xdebug.org]]></url><copyright><![CDATA[Copyright (c) 2002-2099 by Derick Rethans]]></copyright></init>
 
 -> detach -i 1
 <?xml version="1.0" encoding="iso-8859-1"?>
 <response xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug" command="detach" transaction_id="1" status="stopping" reason="ok"></response>
 
 [%d] Log opened at %s
-[%d] [Config] WARN: Due to unavailable TSC clock, setting poll granularity to 100ms instead of 25ms
 [%d] [Config] INFO: Control socket set up successfully: '\\.\pipe\xdebug-ctrl.%d'
 [%d] [Step Debug] INFO: Connecting to configured address/port: %s
 [%d] [Step Debug] INFO: Connected to debugging client: %s
