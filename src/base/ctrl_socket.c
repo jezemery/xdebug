@@ -468,6 +468,7 @@ void xdebug_control_socket_setup(void)
 		return;
 	}
 
+	xdebug_log_ex(XLOG_CHAN_CONFIG, XLOG_INFO, "CTRL-OK", "Control socket set up successfully: '@%s'", XG_BASE(control_socket_path));
 #endif
 }
 
